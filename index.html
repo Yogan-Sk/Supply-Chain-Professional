@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sai Krishna Burra | Supply Chain Management Professional</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container nav">
+      <h1 class="logo">Sai Krishna Burra</h1>
+      <nav>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#blogs">Blogs</a></li>
+        </ul>
+      </nav>
+      <a href="Resume.docx" download class="btn small">Download Resume</a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <h2 class="white-text">Supply Chain & Operations Professional</h2>
+      <p>Logistics and supply chain specialist with 7+ years of experience optimizing procurement, vendor coordination, and network expansion for global operations. Skilled in routing, last-mile delivery, and operational analytics.</p>
+      <a href="#contact" class="btn">Get in Touch</a>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="container about">
+    <h2>About Me</h2>
+    <p>I’m a Hyderabad-based Supply Chain Management professional with extensive experience in transportation, procurement, and network optimization. My tenure at Amazon and Accenture has honed my ability to design scalable logistics strategies and drive measurable cost efficiencies.</p>
+  </section>
+
+  <!-- Experience -->
+  <section id="experience" class="container experience">
+    <h2>Professional Experience</h2>
+    <div class="card">
+      <h3>Accenture Solutions Pvt. Ltd – Hyderabad</h3>
+      <p><em>Supply Chain Operations Analyst | Jun 2025 – Oct 2025</em></p>
+      <ul>
+        <li>Managed P2P operations and vendor coordination for US Foods client.</li>
+        <li>Handled PO creation, correction, validation, and expedition.</li>
+        <li>Worked with Salesforce, PRISM, and SCPO to streamline procurement processes.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Amazon Development Centre – Hyderabad</h3>
+      <p><em>Transportation Specialist III | Jun 2019 – Jun 2025</em></p>
+      <ul>
+        <li>Managed network expansion and last-mile configuration across multiple regions.</li>
+        <li>Handled routing, scheduling, and DSP payments for Amazon Food operations.</li>
+        <li>Implemented geo-spatial zoning and virtual warehouse setup to optimize operations.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="container projects">
+    <h2>Key Projects</h2>
+    <div class="project-grid">
+      <div class="card">
+        <h3>Virtual Warehouse Expansion</h3>
+        <p>Set up and deployed multiple virtual warehouses using ATROPS & SD Portal configurations, improving SLA adherence by 9%.</p>
+      </div>
+      <div class="card">
+        <h3>Routing & Scheduling Automation</h3>
+        <p>Automated route scheduling for food and grocery delivery operations, cutting manual work by 40%.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="container skills">
+    <h2>Core Skills</h2>
+    <ul>
+      <li>Supply Chain & Logistics</li>
+      <li>Procurement & Vendor Management</li>
+      <li>Routing & Scheduling</li>
+      <li>Warehouse Configuration</li>
+      <li>ERP Tools: Salesforce, PRISM, SCPO</li>
+    </ul>
+  </section>
+
+  <!-- Blogs -->
+  <section id="blogs" class="container blogs">
+    <h2>Blogs</h2>
+    <div class="project-grid">
+      <div class="card blog-card">
+        <h3>Optimizing Last-Mile Delivery</h3>
+        <p>Exploring how route analytics and geospatial data can enhance last-mile efficiency in the e-commerce supply chain.</p>
+        <div class="btn-container"><a href="#" class="btn small">Read More</a></div>
+      </div>
+      <div class="card blog-card">
+        <h3>Procurement Strategy in 2025</h3>
+        <p>Adapting procurement processes for agility and resilience in a globalized supply chain landscape.</p>
+        <div class="btn-container"><a href="#" class="btn small">Read More</a></div>
+      </div>
+      <div class="card blog-card">
+        <h3>Warehouse Digitization</h3>
+        <p>Insights into how technology and automation are transforming warehouse operations in modern logistics.</p>
+        <div class="btn-container"><a href="#" class="btn small">Read More</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="container contact">
+    <h2>Contact</h2>
+    <p>📍 Hyderabad, Telangana | 📞 <a href="tel:+917995891015">+91 7995891015</a> | 📧 <a href="mailto:yoganandasaikrishna@gmail.com">yoganandasaikrishna@gmail.com</a> | 🔗 <a href="https://www.linkedin.com/in/sai-krishna-burra-77799a112/" target="_blank">LinkedIn</a></p>
+  </section>
+
+  <!-- Floating WhatsApp Button and Chat Popup -->
+  <div class="whatsapp-container">
+    <a href="#" class="whatsapp-float" id="whatsappBtn" title="Chat with me on WhatsApp">💬</a>
+    <div class="chat-popup" id="chatPopup">
+      <div class="chat-header">Hi 👋 I’m Sai Krishna Burra. Let’s connect on WhatsApp!</div>
+      <textarea id="chatMessage" placeholder="Type your message..."></textarea>
+      <button id="sendMessage">Send</button>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 Sai Krishna Burra — Supply Chain Management Professional</p>
+  </footer>
+
+  <script>
+    const btn = document.getElementById('whatsappBtn');
+    const popup = document.getElementById('chatPopup');
+    const sendBtn = document.getElementById('sendMessage');
+    const messageInput = document.getElementById('chatMessage');
+
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      popup.classList.toggle('show');
+    });
+
+    sendBtn.addEventListener('click', () => {
+      const message = encodeURIComponent(messageInput.value.trim());
+      if (message) {
+        window.open(`https://wa.me/917995891015?text=${message}`, '_blank');
+        messageInput.value = '';
+        popup.classList.remove('show');
+      } else {
+        alert('Please type a message before sending!');
+      }
+    });
+  </script>
+</body>
+</html>
