@@ -1,0 +1,213 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Inter', sans-serif;
+  background: #f9fafb;
+  color: #222;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #0d1117;
+  color: #fff;
+  padding: 1rem 3rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.logo { font-size: 1.5rem; font-weight: 700; }
+.nav-links { list-style: none; display: flex; gap: 1.5rem; }
+.nav-links a { color: #fff; text-decoration: none; transition: 0.3s; }
+.nav-links a:hover { color: #00bfa6; }
+.hamburger { display: none; font-size: 1.8rem; cursor: pointer; }
+
+/* Side Menu */
+.side-menu {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  top: 0; left: 0;
+  background: rgba(0,0,0,0.95);
+  overflow-x: hidden;
+  transition: 0.4s;
+  padding-top: 60px;
+  z-index: 999;
+}
+.side-menu a {
+  display: block;
+  padding: 12px 32px;
+  color: #ccc;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+.side-menu a:hover { color: #00bfa6; }
+.side-menu .closebtn {
+  position: absolute;
+  top: 20px; right: 25px;
+  font-size: 2rem;
+  color: #ccc;
+}
+
+/* Hero */
+.hero {
+  background: linear-gradient(120deg, #00bfa6, #0077b6);
+  color: #fff;
+  text-align: center;
+  padding: 5rem 2rem;
+}
+
+/* Sections */
+.section {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+.section h2 {
+  color: #00bfa6;
+  margin-bottom: 1.5rem;
+}
+
+/* Cards */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+.card {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+.card:hover { transform: translateY(-5px); }
+
+/* Skills */
+.skills-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+  list-style: none;
+}
+.skills-list li {
+  background: #fff;
+  padding: 12px;
+  border-radius: 8px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+.skills-list li:hover {
+  background: #00bfa6;
+  color: #fff;
+}
+
+/* Contact */
+.contact-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  align-items: center;
+}
+.contact-row a {
+  color: #0077b6;
+  text-decoration: none;
+  font-weight: 500;
+}
+.contact-row a:hover {
+  text-decoration: underline;
+}
+.btn {
+  background: #00bfa6;
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+}
+.btn:hover { background: #009b87; }
+
+/* Chat Bubble */
+.chat-bubble {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: #00bfa6;
+  color: white;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  font-size: 1.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  z-index: 1000;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.85);
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+.modal-content {
+  background: #fff;
+  padding: 2rem 3rem;
+  border-radius: 12px;
+  text-align: center;
+  color: #222;
+  animation: fadeIn 0.5s ease;
+}
+.modal-content button {
+  background: #00bfa6;
+  border: none;
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 6px;
+  margin: 10px;
+  cursor: pointer;
+}
+.modal-content button:hover { background: #009b87; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Footer */
+footer {
+  background: #0d1117;
+  color: #ccc;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+/* Mobile View */
+body.mobile-view .navbar {
+  flex-direction: column;
+  padding: 0.8rem 1rem;
+}
+body.mobile-view .nav-links { display: none; }
+body.mobile-view .hamburger { display: block; }
+body.mobile-view .project-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+body.mobile-view .skills-list { grid-template-columns: 1fr; }
+body.mobile-view .chat-bubble {
+  bottom: 15px;
+  right: 15px;
+  width: 48px;
+  height: 48px;
+  font-size: 1.4rem;
+}

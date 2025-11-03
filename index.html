@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sai Krishna Burra | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">Sai Krishna Burra</div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Core Competencies</a></li>
+      <li><a href="#blogs">Blogs</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+  </nav>
+
+  <!-- Side Menu -->
+  <div class="side-menu" id="sideMenu">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeMenu()">&times;</a>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Core Competencies</a>
+    <a href="#blogs">Blogs</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h2>Supply Chain & Operations Professional</h2>
+    <p>Efficient, analytical, and innovation-driven logistics expertise.</p>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="section">
+    <h2>About Me</h2>
+    <p>I’m a Supply Chain Management professional with experience in procurement, logistics, and network optimization. Skilled in transforming data-driven insights into efficient operational strategies for global businesses.</p>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="section">
+    <h2>Key Projects</h2>
+    <div class="project-grid">
+      <div class="card project-card">
+        <h3>Network Expansion</h3>
+        <p>Led nationwide warehouse and geo-zoning rollout for Amazon Food.</p>
+      </div>
+      <div class="card project-card">
+        <h3>Last-Mile Optimization</h3>
+        <p>Improved routing efficiency and scheduling accuracy using analytics.</p>
+      </div>
+      <div class="card project-card">
+        <h3>Procure-to-Pay (P2P)</h3>
+        <p>Streamlined procurement lifecycle from PO to payments at Accenture.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Competencies -->
+  <section id="skills" class="section">
+    <h2>Core Competencies</h2>
+    <ul class="skills-list">
+      <li>Route Planning & Optimization</li>
+      <li>Procurement & Vendor Management</li>
+      <li>Network Expansion & Geo-Mapping</li>
+      <li>Transportation & Inventory Management</li>
+      <li>Demand Forecasting</li>
+      <li>Logistics Analytics</li>
+    </ul>
+  </section>
+
+  <!-- Blogs -->
+  <section id="blogs" class="section">
+    <h2>Blogs</h2>
+    <div class="project-grid">
+      <div class="card blog-card">
+        <h3>Optimizing Last-Mile Delivery</h3>
+        <p>How route analytics enhance last-mile performance in e-commerce logistics.</p>
+      </div>
+      <div class="card blog-card">
+        <h3>Procurement Strategy 2025</h3>
+        <p>Adapting procurement models for agility and cost efficiency in global supply chains.</p>
+      </div>
+      <div class="card blog-card">
+        <h3>Warehouse Automation</h3>
+        <p>Leveraging automation and AI for streamlined warehouse management.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section contact">
+    <h2>Contact Me</h2>
+    <div class="contact-row">
+      <p>📞 <a href="tel:+917995891015">+91 7995891015</a></p>
+      <p>📧 <a href="mailto:yoganandasaikrishna@gmail.com">yoganandasaikrishna@gmail.com</a></p>
+      <p>🔗 <a href="https://www.linkedin.com/in/sai-krishna-burra-77799a112/" target="_blank">LinkedIn</a></p>
+      <a href="Sai_Krishna_Burra_Supply_chain_Specalist.pdf" download class="btn">📄 Download Resume</a>
+    </div>
+  </section>
+
+  <!-- Chat Bubble -->
+  <div class="chat-bubble" onclick="openWhatsApp()">💬</div>
+
+  <!-- Popup Greeting -->
+  <div id="welcomeModal" class="modal">
+    <div class="modal-content">
+      <h2 id="greetingText">👋 Hi! Welcome to my portfolio 😄</h2>
+      <div id="viewOptions" style="display: none;">
+        <p>Would you like to view:</p>
+        <button onclick="setView('desktop')">💻 Desktop</button>
+        <button onclick="setView('mobile')">📱 Mobile</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 Sai Krishna Burra — Supply Chain Management Professional</p>
+  </footer>
+
+  <script>
+    // Show greeting and view options
+    window.onload = function() {
+      const modal = document.getElementById("welcomeModal");
+      const viewOptions = document.getElementById("viewOptions");
+      modal.style.display = "flex";
+      setTimeout(() => {
+        viewOptions.style.display = "block";
+      }, 2000);
+    };
+
+    function setView(type) {
+      document.getElementById("welcomeModal").style.display = "none";
+      if (type === 'mobile') document.body.classList.add("mobile-view");
+      else document.body.classList.remove("mobile-view");
+    }
+
+    // Hamburger menu
+    function toggleMenu() {
+      document.getElementById("sideMenu").style.width = "240px";
+    }
+    function closeMenu() {
+      document.getElementById("sideMenu").style.width = "0";
+    }
+
+    // WhatsApp chat
+    function openWhatsApp() {
+      window.open("https://wa.me/917995891015?text=Hello%20Sai%20Krishna!", "_blank");
+    }
+  </script>
+</body>
+</html>
