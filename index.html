@@ -21,7 +21,7 @@
     <div class="hamburger" onclick="toggleMenu()">☰</div>
   </nav>
 
-  <!-- Side Menu -->
+  <!-- Side Menu (for mobile) -->
   <div class="side-menu" id="sideMenu">
     <a href="javascript:void(0)" class="closebtn" onclick="closeMenu()">&times;</a>
     <a href="#about">About</a>
@@ -45,20 +45,59 @@
 
   <!-- Projects -->
   <section id="projects" class="section">
-    <h2>Key Projects</h2>
+    <h2>Projects</h2>
     <div class="project-grid">
+
       <div class="card project-card">
-        <h3>Network Expansion</h3>
-        <p>Led nationwide warehouse and geo-zoning rollout for Amazon Food.</p>
+        <h3>UTR / OOR Optimization</h3>
+        <p>Enhanced under-the-roof and out-on-road operations to reduce turnaround time by improving DA efficiency.</p>
       </div>
+
       <div class="card project-card">
-        <h3>Last-Mile Optimization</h3>
-        <p>Improved routing efficiency and scheduling accuracy using analytics.</p>
+        <h3>3P Vehicle Placement</h3>
+        <p>Managed third-party vehicle deployment for cost efficiency and improved service reliability.</p>
       </div>
+
       <div class="card project-card">
-        <h3>Procure-to-Pay (P2P)</h3>
-        <p>Streamlined procurement lifecycle from PO to payments at Accenture.</p>
+        <h3>Amazon Food Operations</h3>
+        <p>Handled routing, scheduling, and delivery setup for Amazon Food verticals across major Indian cities.</p>
       </div>
+
+      <div class="card project-card">
+        <h3>Routing, Scheduling & DSP Payments</h3>
+        <p>Managed routing packages, DA/store scheduling, and DSP invoice verification for IN, KSA, BR, AU, and UAE.</p>
+      </div>
+
+      <div class="card project-card">
+        <h3>Amazon Network Expansion</h3>
+        <p>Led pan-India warehouse expansion and network optimization to enhance regional delivery coverage.</p>
+      </div>
+
+      <div class="card project-card">
+        <h3>COSM (Creating Geographies)</h3>
+        <p>Created and optimized geo-boundaries to improve delivery network coverage and reduce transit times.</p>
+      </div>
+
+      <div class="card project-card">
+        <h3>Last-Mile Network Design & Optimization</h3>
+        <p>Developed and configured last-mile routes for optimized delivery times and reduced logistics cost.</p>
+      </div>
+
+      <div class="card project-card">
+        <h3>Forward & Reverse Logistics</h3>
+        <p>Managed A-to-Z connectivity for forward and reverse logistics to ensure smooth operational flow.</p>
+      </div>
+
+      <div class="card project-card">
+        <h3>Drop Ship</h3>
+        <p>Implemented supplier-to-customer direct delivery model to reduce lead time and handling costs.</p>
+      </div>
+
+<div class="card project-card">
+        <h3>End-to-End Procure-to-Pay (P2P):</h3>
+        <p>xecuted complete procurement lifecycle from purchase order to payment reconciliation, ensuring 98% fulfillment accuracy..</p>
+      </div>
+
     </div>
   </section>
 
@@ -125,7 +164,6 @@
   </footer>
 
   <script>
-    // Show greeting and view options
     window.onload = function() {
       const modal = document.getElementById("welcomeModal");
       const viewOptions = document.getElementById("viewOptions");
@@ -141,7 +179,6 @@
       else document.body.classList.remove("mobile-view");
     }
 
-    // Hamburger menu
     function toggleMenu() {
       document.getElementById("sideMenu").style.width = "240px";
     }
@@ -149,7 +186,6 @@
       document.getElementById("sideMenu").style.width = "0";
     }
 
-    // WhatsApp chat
     function openWhatsApp() {
       window.open("https://wa.me/917995891015?text=Hello%20Sai%20Krishna!", "_blank");
     }
