@@ -30,7 +30,7 @@ function downloadResume() {
   alert("📄 Resume downloaded successfully!");
 }
 
-// Like, share, hire counters
+// Like and share counters
 function likeProfile() {
   let c = parseInt(document.getElementById("likeCount").innerText);
   document.getElementById("likeCount").innerText = c + 1;
@@ -41,11 +41,6 @@ function shareProfile() {
   document.getElementById("shareCount").innerText = c + 1;
   navigator.clipboard.writeText(window.location.href);
   alert("Profile link copied!");
-}
-
-function hireProfile() {
-  let c = parseInt(document.getElementById("hireCount").innerText);
-  document.getElementById("hireCount").innerText = c + 1;
 }
 
 // Theme toggle
