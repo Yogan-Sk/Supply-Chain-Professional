@@ -11,7 +11,7 @@
   <!-- Greeting Modal -->
   <div id="welcomeModal" class="modal">
     <div class="modal-content">
-      <h2>👋 Hi! Welcome to my portfolio 😄</h2>
+      <h2>👋 Welcome to my profile.</h2>
       <div id="viewOptions">
         <p>Would you like to view:</p>
         <button onclick="setView('desktop')">💻 Desktop</button>
@@ -88,7 +88,7 @@
       <p>📧 <a href="mailto:yoganandasaikrishna@gmail.com">yoganandasaikrishna@gmail.com</a></p>
       <p>🔗 <a href="https://www.linkedin.com/in/sai-krishna-burra-77799a112" target="_blank">LinkedIn</a></p>
     </div>
-    <button class="hire-btn" onclick="openHireOptions()">Hire Me</button>
+    <button class="hire-btn" onclick="downloadResume()">📄 Download Resume</button>
   </section>
 
   <!-- Footer -->
@@ -102,30 +102,14 @@
     <p>© 2025 Sai Krishna Burra — Supply Chain Management Professional</p>
   </footer>
 
-  <!-- Hire Me Modal -->
-  <div id="hireModal" class="modal">
-    <div class="modal-content form-modal">
-      <span class="close" onclick="closeHireForm()">&times;</span>
-      <h2>Hire Me</h2>
-      <p>Would you like to:</p>
-      <button onclick="downloadResume()">📄 Download Resume</button>
-      <button onclick="showHireForm()">✉️ Fill Contact Form</button>
-
-      <form id="hireForm" style="display:none;">
-        <input type="text" placeholder="Your Name" required>
-        <input type="email" placeholder="Your Email" required>
-        <textarea placeholder="Your Message" required></textarea>
-        <button type="submit">Send</button>
-      </form>
-    </div>
-  </div>
-
+  <!-- JavaScript -->
   <script>
     // Greeting popup
     window.onload = function() {
       const modal = document.getElementById("welcomeModal");
       modal.style.display = "flex";
     };
+
     function setView(type) {
       document.getElementById("welcomeModal").style.display = "none";
       if (type === "mobile") document.body.classList.add("mobile-view");
@@ -137,16 +121,7 @@
       document.getElementById('navLinks').classList.toggle('show');
     }
 
-    // Hire modal
-    function openHireOptions() {
-      document.getElementById("hireModal").style.display = "flex";
-    }
-    function closeHireForm() {
-      document.getElementById("hireModal").style.display = "none";
-    }
-    function showHireForm() {
-      document.getElementById("hireForm").style.display = "block";
-    }
+    // Resume download
     function downloadResume() {
       const link = document.createElement('a');
       link.href = "Sai_Krishna_Burra_Supply_chain_Specalist.pdf";
@@ -160,25 +135,18 @@
       let c = parseInt(document.getElementById("likeCount").innerText);
       document.getElementById("likeCount").innerText = c + 1;
     }
+
     function shareProfile() {
       let c = parseInt(document.getElementById("shareCount").innerText);
       document.getElementById("shareCount").innerText = c + 1;
       navigator.clipboard.writeText(window.location.href);
       alert("Profile link copied!");
     }
+
     function hireProfile() {
       let c = parseInt(document.getElementById("hireCount").innerText);
       document.getElementById("hireCount").innerText = c + 1;
-      openHireOptions();
     }
-
-    // Hire form submit
-    document.getElementById("hireForm").addEventListener("submit", (e) => {
-      e.preventDefault();
-      alert("✅ Thank you! I'll contact you soon.");
-      closeHireForm();
-      downloadResume();
-    });
   </script>
 
 </body>

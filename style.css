@@ -91,17 +91,24 @@ body {
   text-decoration: none;
   font-weight: 600;
 }
+
+/* ---------- DOWNLOAD RESUME BUTTON ---------- */
 .hire-btn {
-  margin-top: 1rem;
-  background: #00b4d8;
+  background: linear-gradient(135deg, #0077b6, #00b4d8);
   color: #fff;
+  font-weight: 600;
+  padding: 12px 24px;
   border: none;
-  padding: 10px 20px;
   border-radius: 25px;
   cursor: pointer;
-  transition: 0.3s;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 10px rgba(0, 119, 182, 0.3);
 }
-.hire-btn:hover { background: #0077b6; }
+.hire-btn:hover {
+  background: linear-gradient(135deg, #00b4d8, #0077b6);
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0, 119, 182, 0.5);
+}
 
 /* ---------- FOOTER ---------- */
 footer {
@@ -150,14 +157,6 @@ footer {
   cursor: pointer;
 }
 .modal-content button:hover { background: #0077b6; }
-.modal-content input,
-.modal-content textarea {
-  width: 100%;
-  margin: 8px 0;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-}
 .close { cursor: pointer; float: right; font-size: 1.5rem; }
 
 /* ---------- RESPONSIVE ---------- */
@@ -166,4 +165,18 @@ footer {
   .nav-links { display: none; flex-direction: column; background: #0077b6; width: 100%; }
   .nav-links.show { display: flex; }
   .contact-info { flex-direction: column; text-align: center; }
+}
+
+/* ---------- AUTO DARK THEME ---------- */
+@media (prefers-color-scheme: dark) {
+  body { background: #1a1a1a; color: #f5f5f5; }
+  .navbar, footer { background: #6a0dad; }
+  .section h2 { color: #b97aff; }
+  .hire-btn {
+    background: linear-gradient(135deg, #6a0dad, #b97aff);
+    box-shadow: 0 0 10px rgba(185, 122, 255, 0.4);
+  }
+  .hire-btn:hover {
+    box-shadow: 0 0 20px rgba(185, 122, 255, 0.7);
+  }
 }
