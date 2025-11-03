@@ -332,6 +332,7 @@
   <!-- Hero -->
   <section class="hero">
     <div class="container">
+<h1>👋 Welcome to My Portfolio</h1>
       <h2>Supply Chain & Operations Professional</h2>
       <p>Supply Chain is like nature; it is all around us.</p>
       <a href="#contact" class="btn">Get in Touch</a>
@@ -440,17 +441,43 @@
   </div>
 
   <footer>
-    <p>© 2025 Sai Krishna Burra — Supply Chain Management Professional</p>
-  </footer>
+  <p>© 2025 Sai Krishna Burra — Supply Chain Management Professional</p>
+  <p>👀 Visitors:
+    <img src="https://hits.sh/saikrishnaburra.github.io.svg?style=flat-square&label=Visits&color=00bfa6" alt="Visitor count">
+  </p>
+</footer>
 
   <script>
-    const btn = document.getElementById('whatsappBtn');
-    const popup = document.getElementById('chatPopup');
-    const sendBtn = document.getElementById('sendMessage');
-    const messageInput = document.getElementById('chatMessage');
-    btn.addEventListener('click', e => {
-      e.preventDefault();
-      popup.classList.toggle('show');
-    });
-    sendBtn.addEventListener('click', () => {
-      const message =
+  const btn = document.getElementById('whatsappBtn');
+  const popup = document.getElementById('chatPopup');
+  const sendBtn = document.getElementById('sendMessage');
+  const messageInput = document.getElementById('chatMessage');
+
+  // Toggle popup open/close
+  btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    popup.classList.toggle('show');
+  });
+
+  // Send message to WhatsApp
+  sendBtn.addEventListener('click', () => {
+    const message = messageInput.value.trim();
+    if (message) {
+      const encodedMessage = encodeURIComponent(message);
+      // Replace this number with your actual WhatsApp number (with country code)
+      window.open(`https://wa.me/917995891015?text=${encodedMessage}`, '_blank');
+      messageInput.value = '';
+      popup.classList.remove('show');
+    } else {
+      alert("Please type a message before sending!");
+    }
+  });
+
+  // Optional: close popup if user clicks outside
+  document.addEventListener('click', (e) => {
+    if (!popup.contains(e.target) && e.target !== btn) {
+      popup.classList.remove('show');
+    }
+  });
+</script>
+
