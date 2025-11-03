@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sai Krishna Burra | Supply Chain Professional</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Greeting Modal -->
+  <div id="welcomeModal" class="modal">
+    <div class="modal-content">
+      <h2>👋 Hi! Welcome to my portfolio 😄</h2>
+      <div id="viewOptions">
+        <p>Would you like to view:</p>
+        <button onclick="setView('desktop')">💻 Desktop</button>
+        <button onclick="setView('mobile')">📱 Mobile</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">Sai Krishna Burra</div>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Core Competencies</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Supply Chain & Operations Professional</h1>
+    <p>Delivering operational efficiency, cost optimization, and logistics innovation.</p>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="section about">
+    <h2>About Me</h2>
+    <p>
+      I have worked as a <strong>Supply Chain Operations Specialist</strong> at Amazon — 
+      handling network design, setup, and configuration across multiple regions.  
+      At <strong>Accenture</strong>, I managed end-to-end <strong>Procure-to-Pay (P2P)</strong> operations, ensuring 
+      vendor compliance and efficient process execution for global clients.
+    </p>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="section">
+    <h2>Projects</h2>
+    <div class="project-grid">
+      <div class="card"><h3>UTR / OOR Optimization</h3><p>Enhanced routing efficiency and reduced turnaround time across facilities.</p></div>
+      <div class="card"><h3>3P Vehicle Placement</h3><p>Streamlined ad-hoc vehicle management for cost-effective logistics.</p></div>
+      <div class="card"><h3>Amazon Food</h3><p>Optimized routing, compliance, and DSP payment audits for Amazon Food operations.</p></div>
+      <div class="card"><h3>Routing & DSP Payments</h3><p>Handled routing, scheduling, and DSP invoice verification for IN, KSA, BR, AU, UAE.</p></div>
+      <div class="card"><h3>Amazon Network Expansion</h3><p>Executed warehouse setup and last-mile configuration nationwide.</p></div>
+      <div class="card"><h3>COSM</h3><p>Developed optimized geographic models to improve customer reach.</p></div>
+      <div class="card"><h3>Last-Mile Optimization</h3><p>Designed efficient last-mile delivery models, enhancing SLA compliance.</p></div>
+      <div class="card"><h3>Forward & Reverse Logistics</h3><p>Improved outbound and return logistics through process automation.</p></div>
+      <div class="card"><h3>Drop Ship</h3><p>Implemented supplier-to-customer delivery models to minimize lead times.</p></div>
+      <div class="card"><h3>Procure-to-Pay (P2P)</h3><p>Streamlined the entire P2P lifecycle, ensuring PO accuracy and vendor alignment.</p></div>
+    </div>
+  </section>
+
+  <!-- Core Competencies -->
+  <section id="skills" class="section">
+    <h2>Core Competencies</h2>
+    <ul class="skills-list">
+      <li>Supply Chain Optimization</li>
+      <li>Procurement & P2P</li>
+      <li>Transportation Management</li>
+      <li>Inventory & Warehouse Operations</li>
+      <li>Route Planning & Geo-Mapping</li>
+      <li>Network Design & Expansion</li>
+      <li>Stakeholder Management</li>
+    </ul>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section contact">
+    <h2>Contact Me</h2>
+    <div class="contact-info">
+      <p>📞 <a href="tel:+917995891015">+91 7995891015</a></p>
+      <p>📧 <a href="mailto:yoganandasaikrishna@gmail.com">yoganandasaikrishna@gmail.com</a></p>
+      <p>🔗 <a href="https://www.linkedin.com/in/sai-krishna-burra-77799a112" target="_blank">LinkedIn</a></p>
+    </div>
+    <button class="hire-btn" onclick="openHireOptions()">Hire Me</button>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="stats">
+      <button onclick="likeProfile()">❤️ Like (<span id="likeCount">25</span>)</button>
+      <button onclick="shareProfile()">🔁 Share (<span id="shareCount">12</span>)</button>
+      <button onclick="hireProfile()">🤝 Hire (<span id="hireCount">3</span>)</button>
+    </div>
+    <p>👀 Visitors: <span id="visitorCount">100</span></p>
+    <p>© 2025 Sai Krishna Burra — Supply Chain Management Professional</p>
+  </footer>
+
+  <!-- Hire Me Modal -->
+  <div id="hireModal" class="modal">
+    <div class="modal-content form-modal">
+      <span class="close" onclick="closeHireForm()">&times;</span>
+      <h2>Hire Me</h2>
+      <p>Would you like to:</p>
+      <button onclick="downloadResume()">📄 Download Resume</button>
+      <button onclick="showHireForm()">✉️ Fill Contact Form</button>
+
+      <form id="hireForm" style="display:none;">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea placeholder="Your Message" required></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // Greeting popup
+    window.onload = function() {
+      const modal = document.getElementById("welcomeModal");
+      modal.style.display = "flex";
+    };
+    function setView(type) {
+      document.getElementById("welcomeModal").style.display = "none";
+      if (type === "mobile") document.body.classList.add("mobile-view");
+      else document.body.classList.remove("mobile-view");
+    }
+
+    // Navbar toggle
+    function toggleMenu() {
+      document.getElementById('navLinks').classList.toggle('show');
+    }
+
+    // Hire modal
+    function openHireOptions() {
+      document.getElementById("hireModal").style.display = "flex";
+    }
+    function closeHireForm() {
+      document.getElementById("hireModal").style.display = "none";
+    }
+    function showHireForm() {
+      document.getElementById("hireForm").style.display = "block";
+    }
+    function downloadResume() {
+      const link = document.createElement('a');
+      link.href = "Sai_Krishna_Burra_Supply_chain_Specalist.pdf";
+      link.download = "Sai_Krishna_Burra_Resume.pdf";
+      link.click();
+      alert("📄 Resume downloaded successfully!");
+    }
+
+    // Like, share, hire counters
+    function likeProfile() {
+      let c = parseInt(document.getElementById("likeCount").innerText);
+      document.getElementById("likeCount").innerText = c + 1;
+    }
+    function shareProfile() {
+      let c = parseInt(document.getElementById("shareCount").innerText);
+      document.getElementById("shareCount").innerText = c + 1;
+      navigator.clipboard.writeText(window.location.href);
+      alert("Profile link copied!");
+    }
+    function hireProfile() {
+      let c = parseInt(document.getElementById("hireCount").innerText);
+      document.getElementById("hireCount").innerText = c + 1;
+      openHireOptions();
+    }
+
+    // Hire form submit
+    document.getElementById("hireForm").addEventListener("submit", (e) => {
+      e.preventDefault();
+      alert("✅ Thank you! I'll contact you soon.");
+      closeHireForm();
+      downloadResume();
+    });
+  </script>
+
+</body>
+</html>
