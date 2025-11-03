@@ -2,161 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="color-scheme" content="light">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sai Krishna Burra | Supply Chain Professional</title>
   <link rel="stylesheet" href="style.css">
-
-  <style>
-    /* Force light mode colors regardless of system theme */
-    :root {
-      color-scheme: light;
-      --bg-color: #ffffff;
-      --text-color: #222;
-      --accent-color: #d32f2f;
-      --card-bg: #f7f7f7;
-    }
-
-    body {
-      background: var(--bg-color);
-      color: var(--text-color);
-      margin: 0;
-      font-family: "Inter", sans-serif;
-    }
-
-    @media (prefers-color-scheme: dark) {
-      :root {
-        color-scheme: light;
-        --bg-color: #ffffff !important;
-        --text-color: #222 !important;
-        --card-bg: #f7f7f7 !important;
-      }
-      body {
-        background: var(--bg-color) !important;
-        color: var(--text-color) !important;
-      }
-    }
-
-    .card, .modal-content, nav, footer {
-      background: var(--card-bg);
-      color: var(--text-color);
-    }
-
-    a {
-      color: var(--accent-color);
-      text-decoration: none;
-    }
-
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
-      background: var(--card-bg);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    .hamburger {
-      font-size: 1.8rem;
-      cursor: pointer;
-      display: none;
-    }
-
-    .nav-links {
-      list-style: none;
-      display: flex;
-      gap: 1.5rem;
-    }
-
-    .nav-links li a {
-      font-weight: 600;
-    }
-
-    @media (max-width: 768px) {
-      .hamburger {
-        display: block;
-      }
-      .nav-links {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        right: 0;
-        background: var(--bg-color);
-        padding: 1rem;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      }
-      .nav-links.show {
-        display: flex;
-      }
-    }
-
-    .hero {
-      text-align: center;
-      padding: 3rem 1rem;
-    }
-
-    .section {
-      padding: 2rem;
-      max-width: 900px;
-      margin: auto;
-    }
-
-    .project-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1rem;
-    }
-
-    .card {
-      border-radius: 10px;
-      padding: 1rem;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    }
-
-    footer {
-      text-align: center;
-      padding: 1.5rem;
-      font-size: 0.9rem;
-      background: var(--card-bg);
-      border-top: 1px solid #ddd;
-    }
-
-    footer .stats {
-      margin-bottom: 0.5rem;
-    }
-
-    button {
-      background: var(--accent-color);
-      color: white;
-      border: none;
-      border-radius: 5px;
-      padding: 0.5rem 1rem;
-      cursor: pointer;
-      font-size: 1rem;
-    }
-
-    .modal {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.5);
-      justify-content: center;
-      align-items: center;
-    }
-
-    .modal-content {
-      background: #fff;
-      padding: 2rem;
-      border-radius: 10px;
-      text-align: center;
-    }
-  </style>
 </head>
 <body>
 
@@ -175,6 +23,7 @@
   <!-- Navbar -->
   <nav class="navbar">
     <div class="logo">Sai Krishna Burra</div>
+    <div class="theme-toggle" onclick="toggleTheme()">🌙</div>
     <div class="hamburger" onclick="toggleMenu()">☰</div>
     <ul class="nav-links" id="navLinks">
       <li><a href="#about">About</a></li>
@@ -240,7 +89,7 @@
       <p>📧 <a href="mailto:yoganandasaikrishna@gmail.com">yoganandasaikrishna@gmail.com</a></p>
       <p>🔗 <a href="https://www.linkedin.com/in/sai-krishna-burra-77799a112" target="_blank">LinkedIn</a></p>
     </div>
-    <button onclick="downloadResume()">📄 Download Resume</button>
+    <button class="hire-btn" onclick="downloadResume()">📄 Download Resume</button>
   </section>
 
   <!-- Footer -->
@@ -248,52 +97,12 @@
     <div class="stats">
       <button onclick="likeProfile()">❤️ Like (<span id="likeCount">25</span>)</button>
       <button onclick="shareProfile()">🔁 Share (<span id="shareCount">12</span>)</button>
+      <button onclick="hireProfile()">🤝 Hire (<span id="hireCount">3</span>)</button>
     </div>
     <p>👀 Visitors: <span id="visitorCount">100</span></p>
     <p>© 2025 Sai Krishna Burra — Supply Chain Management Professional</p>
   </footer>
 
-  <!-- JavaScript -->
-  <script>
-    // Greeting popup
-    window.onload = function() {
-      const modal = document.getElementById("welcomeModal");
-      modal.style.display = "flex";
-    };
-
-    function setView(type) {
-      document.getElementById("welcomeModal").style.display = "none";
-      if (type === "mobile") document.body.classList.add("mobile-view");
-      else document.body.classList.remove("mobile-view");
-    }
-
-    // Navbar toggle
-    function toggleMenu() {
-      document.getElementById('navLinks').classList.toggle('show');
-    }
-
-    // Resume download
-    function downloadResume() {
-      const link = document.createElement('a');
-      link.href = "Sai_Krishna_Burra_Supply_chain_Specalist.pdf";
-      link.download = "Sai_Krishna_Burra_Resume.pdf";
-      link.click();
-      alert("📄 Resume downloaded successfully!");
-    }
-
-    // Like, share counters
-    function likeProfile() {
-      let c = parseInt(document.getElementById("likeCount").innerText);
-      document.getElementById("likeCount").innerText = c + 1;
-    }
-
-    function shareProfile() {
-      let c = parseInt(document.getElementById("shareCount").innerText);
-      document.getElementById("shareCount").innerText = c + 1;
-      navigator.clipboard.writeText(window.location.href);
-      alert("Profile link copied!");
-    }
-  </script>
-
+  <script src="script.js"></script>
 </body>
 </html>

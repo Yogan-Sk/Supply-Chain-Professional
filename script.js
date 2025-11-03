@@ -1,7 +1,13 @@
 // Greeting popup
-window.onload = function () {
+window.onload = function() {
   const modal = document.getElementById("welcomeModal");
   modal.style.display = "flex";
+
+  // Apply saved theme
+  if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark-mode");
+    document.querySelector(".theme-toggle").textContent = "☀️";
+  }
 };
 
 function setView(type) {
@@ -12,7 +18,7 @@ function setView(type) {
 
 // Navbar toggle
 function toggleMenu() {
-  document.getElementById("navLinks").classList.toggle("show");
+  document.getElementById('navLinks').classList.toggle('show');
 }
 
 // Resume download
@@ -24,14 +30,35 @@ function downloadResume() {
   alert("📄 Resume downloaded successfully!");
 }
 
-// Like & Share
+// Like, share, hire counters
 function likeProfile() {
   let c = parseInt(document.getElementById("likeCount").innerText);
   document.getElementById("likeCount").innerText = c + 1;
 }
+
 function shareProfile() {
   let c = parseInt(document.getElementById("shareCount").innerText);
   document.getElementById("shareCount").innerText = c + 1;
   navigator.clipboard.writeText(window.location.href);
-  alert("🔗 Profile link copied!");
+  alert("Profile link copied!");
+}
+
+function hireProfile() {
+  let c = parseInt(document.getElementById("hireCount").innerText);
+  document.getElementById("hireCount").innerText = c + 1;
+}
+
+// Theme toggle
+function toggleTheme() {
+  const body = document.body;
+  const toggleBtn = document.querySelector(".theme-toggle");
+  body.classList.toggle("dark-mode");
+
+  if (body.classList.contains("dark-mode")) {
+    toggleBtn.textContent = "☀️";
+    localStorage.setItem("theme", "dark");
+  } else {
+    toggleBtn.textContent = "🌙";
+    localStorage.setItem("theme", "light");
+  }
 }
