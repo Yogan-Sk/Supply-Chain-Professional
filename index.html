@@ -1,34 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sai Krishna Burra | Supply Chain Professional</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-  <!-- Greeting Modal -->
-  <div id="welcomeModal" class="modal">
-    <div class="modal-content">
-      <h2>👋 Welcome to my profile.</h2>
-      <div id="viewOptions">
-        <p>Would you like to view:</p>
-        <button onclick="setView('desktop')">💻 Desktop</button>
-        <button onclick="setView('mobile')">📱 Mobile</button>
-      </div>
-    </div>
-  </div>
 
   <!-- Navbar -->
   <nav class="navbar">
     <div class="logo">Sai Krishna Burra</div>
-    <div class="theme-toggle" onclick="toggleTheme()">🌙</div>
-    <div class="hamburger" onclick="toggleMenu()">☰</div>
     <ul class="nav-links" id="navLinks">
       <li><a href="#about">About</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#skills">Core Competencies</a></li>
+      <li><a href="#blogs">Blogs</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
@@ -37,16 +24,19 @@
   <section class="hero">
     <h1>Supply Chain & Operations Professional</h1>
     <p>Delivering operational efficiency, cost optimization, and logistics innovation.</p>
+    <a href="Sai_Krishna_Burra_Resume.pdf" download="Sai_Krishna_Burra_Resume.pdf">
+      <button class="resume-btn">📄 Download Resume</button>
+    </a>
   </section>
 
-  <!-- About -->
+  <!-- About Section -->
   <section id="about" class="section about">
     <h2>About Me</h2>
     <p>
-      I have worked as a <strong>Supply Chain Operations Specialist</strong> at Amazon — 
-      handling network design, setup, and configuration across multiple regions.  
-      At <strong>Accenture</strong>, I managed end-to-end <strong>Procure-to-Pay (P2P)</strong> operations, ensuring 
-      vendor compliance and efficient process execution for global clients.
+      I have worked as a <strong>Supply Chain Operations Specialist</strong> at Amazon —
+      handling network design, setup, and configuration across multiple regions.
+      At <strong>Accenture</strong>, I managed end-to-end <strong>Procure-to-Pay (P2P)</strong>
+      operations, ensuring vendor compliance and efficient process execution for global clients.
     </p>
   </section>
 
@@ -81,27 +71,45 @@
     </ul>
   </section>
 
+  <!-- Blogs (Dynamic from Firebase) -->
+  <section id="blogs" class="section blogs">
+    <h2>Blogs</h2>
+    <div class="blog-grid" id="blogContainer">
+      <p>Loading blogs...</p>
+    </div>
+  </section>
+
   <!-- Contact -->
   <section id="contact" class="section contact">
     <h2>Contact Me</h2>
-    <div class="contact-info">
-      <p>📞 <a href="tel:+917995891015">+91 7995891015</a></p>
-      <p>📧 <a href="mailto:yoganandasaikrishna@gmail.com">yoganandasaikrishna@gmail.com</a></p>
-      <p>🔗 <a href="https://www.linkedin.com/in/sai-krishna-burra-77799a112" target="_blank">LinkedIn</a></p>
+    <div class="contact-inline">
+      <p>
+        📞 <a href="tel:+917995891015">+91 7995891015</a> |
+        📧 <a href="mailto:yoganandasaikrishna@gmail.com">yoganandasaikrishna@gmail.com</a> |
+        🔗 <a href="https://www.linkedin.com/in/sai-krishna-burra-77799a112" target="_blank">LinkedIn</a>
+      </p>
     </div>
-    <button class="hire-btn" onclick="downloadResume()">📄 Download Resume</button>
   </section>
 
   <!-- Footer -->
   <footer>
     <div class="stats">
-      <button onclick="likeProfile()">❤️ Like (<span id="likeCount">25</span>)</button>
-      <button onclick="shareProfile()">🔁 Share (<span id="shareCount">12</span>)</button>
+      <button onclick="likeProfile()">❤️ Like (<span id="likeCount">0</span>)</button>
+      <button onclick="shareProfile()">🔁 Share (<span id="shareCount">0</span>)</button>
+      <a href="Sai_Krishna_Burra_Resume.pdf" download="Sai_Krishna_Burra_Resume.pdf">
+        <button type="button" onclick="downloadResume()">📄 Resume Downloads (<span id="downloadCount">0</span>)</button>
+      </a>
     </div>
-    <p>👀 Visitors: <span id="visitorCount">100</span></p>
+    <p>👀 Visitors: <span id="visitorCount">0</span></p>
     <p>© 2025 Sai Krishna Burra — Supply Chain Management Professional</p>
   </footer>
 
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js"></script>
+
+  <!-- Custom Script -->
   <script src="script.js"></script>
+
 </body>
 </html>
